@@ -1,5 +1,12 @@
 import GameplayKit
 
+// extension method for converting Integer to Boolean
+extension Bool {
+  init<T: Integer>(_ integer: T) {
+    self.init(integer != 0)
+  }
+}
+
 class WeightedQuickFind {
     
     var id: [Int] = []
@@ -49,6 +56,14 @@ class WeightedQuickFind {
     }
 }
 
+//extension WeightedQuickFind: CustomDebugStringConvertible {
+//
+//  var debugDescription: String {
+//
+//
+//  }
+//}
+
 ////////////////////////// Class ////////////////////////////////////////
 /////////////////////////// Divider //////////////////////////////////////
 
@@ -73,7 +88,7 @@ struct Percolation {
     init(n: Int) {
         _N = n
         _NSquared = n * n
-        _sites = Array(repeating: 0, count: _NSquared - 1)
+        _sites = Array(repeating: 0, count: _NSquared)
         
         wQF = WeightedQuickFind(n: n)
         top = _NSquared
@@ -97,8 +112,8 @@ struct Percolation {
         
         attachTopBottom()
         
-        testSystem()
-    
+//        testSystem()
+
     }
     
     mutating func open(row: Int, column: Int) {
@@ -169,12 +184,12 @@ struct Percolation {
     }
     
     mutating func testSystem() {
-        print(self._sites)
-        print(wQF.id)
-        print(percolates())
-        
+//        print(self._sites)
+//        print(wQF.id)
+//        print(percolates())
+
         let randomNum = createRandom()
-        print(randomNum)
+        print("\nOPEN SITE @ INDEX:\t\(randomNum)\n")
         
         open(index: randomNum)
         
@@ -205,9 +220,9 @@ struct Percolation {
             fill(index: ranVal + _N)
 
         }
-        print(self._sites)
-        print(wQF.id)
-        print(percolates())
+//        print(self._sites)
+//        print(wQF.id)
+//        print(percolates())
     }
     
     func isCorner(n: Int) -> Bool {
@@ -300,23 +315,27 @@ struct Percolation {
     func siteIndex(row: Int, column: Int) -> Int {
         return row*_N + column
     }
-    
 }
 
-// extension method for converting Integer to Boolean
-extension Bool {
-    init<T: Integer>(_ integer: T) {
-        self.init(integer != 0)
+extension Percolation: CustomDebugStringConvertible {
+
+  var debugDescription: String {
+    var description: String = ""
+    for (index, value) in _sites.enumerated() {
+      // new line begins on the nth = k * n character, where k==>1, 2, 3...
+      if index % _N == 0 {
+        description = "\(description)\n\(value)" } else {
+        description = "\(description)\t\(value)" }
     }
+    return description
+  }
 }
-//////// Percoalte class test///////
 
-
-let p = Percolation(n: 3)
-
-
-
-
+var percolation = Percolation(n: 10)
+print(percolation)
+percolation.testSystem()
+//percolation.open(index: 0)
+print(percolation)
 
 /////////////////////////////////////////////Class///////////////////////////
 ////////////////////////////////////////// Divider ///////////////////////////
