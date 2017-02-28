@@ -24,6 +24,7 @@
 		90F87A0B1E65569A00D0E626 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		90F87A0D1E65569A00D0E626 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90F87A131E6556D400D0E626 /* PercolationV1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercolationV1.swift; sourceTree = "<group>"; };
+		90F87A151E65723500D0E626 /* WeightedQuickFind.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = WeightedQuickFind.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +57,7 @@
 		90F87A001E65569900D0E626 /* Percolation */ = {
 			isa = PBXGroup;
 			children = (
+				90F87A151E65723500D0E626 /* WeightedQuickFind.playground */,
 				90F87A011E65569900D0E626 /* AppDelegate.swift */,
 				90F87A031E65569900D0E626 /* ViewController.swift */,
 				90F87A051E65569A00D0E626 /* Main.storyboard */,
