@@ -111,21 +111,13 @@ struct Percolation {
 
     rand = Int(ran)
 
-    attachTopBottom()
-
-    //        testSystem()
-
-  }
-
-  mutating func open(row: Int, column: Int) {
-    let index = siteIndex(row: row, column: column)
-    open(index: index)
-
+    connectVirtual()
   }
 
   mutating func open(index: Int) {
     guard index < _NSquared
       else { return /* insert requirement to throw out of bounds error */}
+    guard !isOpen(site: index) else { return }
     self._sites[index] = 1
 
     // connect to east if east is open
@@ -146,15 +138,86 @@ struct Percolation {
     }
   }
 
-  mutating func fill(index: Int) {
-    guard index < _NSquared
-      else { return /* insert requirement to throw out of bounds error */}
-    self._sites[index] = 2
+  func isFull(site: Int) -> Bool {
+    let row_ = row(index: site) // exchuse the laiziness
+    let column_ = column(index: site) // excuse the laziness
+    if (!isOnTop(n: site) && column_ <= _N)
+      && (!isOnBottom(n: site) && row_ <= _N) {
+      return wQF.connected(q: site, p: top)
+    }
+
+    return false
   }
 
-  func isOpen(row: Int, column: Int) -> Bool {
-    let index = siteIndex(row: row, column: column)
-    return Bool(_sites[index])
+  func numberOfOpenSites(sites: [Int]) -> Int {
+    return sites.reduce(0, +)
+  }
+
+  func percolates() -> Bool {
+    return wQF.connected(q: top, p: bottom)
+  }
+
+  func canFill(n: Int) -> Bool{
+    return wQF.connected(q: n, p: top)
+  }
+
+  func isMultiple(n: Int) -> Bool {
+    return n % _N == 0
+  }
+}
+
+// Sites
+extension Percolation {
+
+  func connectVirtual() {
+
+    connectVirtualTop()
+    connectVirtualBottom()
+  }
+
+  func connectVirtualTop() {
+    var index = 0
+    while index < _N {
+      wQF.union(p: index, q: top)
+      index += 1
+    }
+  }
+
+  func connectVirtualBottom() {
+    var index = _NSquared - _N
+    while index < _NSquared {
+      wQF.union(p: index, q: bottom)
+      index += 1
+    }
+  }
+
+  func randomSite() -> Int {
+    let random = arc4random_uniform(UInt32(self._NSquared-1))
+    return Int(random)
+  }
+}
+
+/// Indice orientation
+extension Percolation {
+
+  func column(index: Int) -> Int {
+    return index % self._N
+  }
+
+  func row(index: Int) -> Int {
+    return (index - column(index: index)) / self._N
+  }
+
+  func siteIndex(row: Int, column: Int) -> Int {
+    return row*_N + column
+  }
+}
+
+/// Neighbors
+extension Percolation {
+
+  func isOpen(site: Int) -> Bool {
+    return Bool(_sites[site])
   }
 
   func isLeftmost(n: Int) -> Bool {
@@ -172,168 +235,39 @@ struct Percolation {
   func isOnBottom(n: Int) -> Bool {
     return n >= (_NSquared - _N)
   }
+}
 
-  func isFull(site: Int) -> Bool {
-//    return !(_sites[site] > 2)
-    return isFullV2(site: site)
-  }
-
-  func isFullV2(site: Int) -> Bool {
-    let row_ = row(index: site) // exchuse the laiziness
-    let column_ = column(index: site) // excuse the laziness
-    if (!isOnTop(n: site) && column_ <= _N)
-      && (!isOnBottom(n: site) && row_ <= _N) {
-      return wQF.connected(q: site, p: top)
-    }
-
-    return false
-  }
-
-  func numberOfOpenSites(sites: [Int]) -> Int {
-    return sites.reduce(0, +)
-  }
-
-  mutating func testSystem() {
-    //        print(self._sites)
-    //        print(wQF.id)
-    //        print(percolates())
-
-    let randomNum = createRandom()
-    print("\nOPEN SITE @ INDEX:\t\(randomNum)\n")
-
-    open(index: randomNum)
-
-    if canFill(n: randomNum) {
-      fill(index: randomNum)
-
-    }
-
-    if eastOpen(n: randomNum){
-      let ranVal = randomNum
-      fill(index: ranVal - 1)
-    }
-
-    if westOpen(n: randomNum) {
-      let ranVal = randomNum
-      fill(index: ranVal + 1)
-
-    }
-
-    if northOpen(n: randomNum) {
-      let ranVal = randomNum
-      fill(index: ranVal - _N)
-
-    }
-
-    if southOpen(n: randomNum) {
-      let ranVal = randomNum
-      fill(index: ranVal + _N)
-
-    }
-    //        print(self._sites)
-    //        print(wQF.id)
-    //        print(percolates())
-  }
-
-  func isCorner(n: Int) -> Bool {
-    if n == cornerNW || n == cornerNE || n == cornerSE || n == cornerSW {
-      return true
-    }
-    return false
-  }
-
-  func isWall(n: Int) -> Bool {
-    if isMultiple(n: n) {
-      return true
-    }
-
-    if isMultiple(n: n - 1) {
-      return true
-    }
-
-    return false
-  }
-
-  func percolates() -> Bool {
-    return wQF.connected(q: top, p: bottom)
-  }
-
-  func canFill(n: Int) -> Bool{
-    return wQF.connected(q: n, p: top)
-  }
+/// Neighboring
+extension Percolation {
 
   func eastOpen(n: Int) -> Bool {
     guard !isLeftmost(n: n) else { return false }
-    let n = n - 1
-    return isOpen(row: row(index: n), column: column(index: n))
+    return isOpen(site: n-1)
   }
 
   func westOpen(n: Int) -> Bool {
     guard !isRightmost(n: n) else { return false }
-    let n = n + 1
-    return isOpen(row: row(index: n), column: column(index: n))
+    return isOpen(site: n+1)
   }
 
   func northOpen(n: Int) -> Bool {
     guard !isOnTop(n: n) else { return false }
-    let n = n - _N
-    return isOpen(row: row(index: n), column: column(index: n))
+    return isOpen(site: n - _N)
   }
 
   func southOpen(n: Int) -> Bool {
     guard !isOnBottom(n: n) else { return false }
-    let n = n + _N
-    return isOpen(row: row(index: n), column: column(index: n))
-  }
-
-  func isMultiple(n: Int) -> Bool {
-    return n % _N == 0
-  }
-
-  // init methods //
-  mutating func createRandom() -> Int {
-    let r = UInt32(_NSquared)
-
-    let ran = arc4random_uniform(r)
-
-    rand = Int(ran)
-
-    return rand
-  }
-
-  func attachTopBottom() {
-
-    var i = 0
-    while (i <= _N) {
-      wQF.union(p: i, q: top)
-      i += 1
-    }
-
-    i = _NSquared - _N
-
-    while (i <= (_NSquared - 1)) {
-      wQF.union(p: i, q: bottom)
-      i += 1
-    }
-  }
-
-  // Array index <==> row+column conversion
-  func column(index: Int) -> Int {
-    return index % self._N
-  }
-
-  func row(index: Int) -> Int {
-    return (index - column(index: index)) / self._N
-  }
-
-  func siteIndex(row: Int, column: Int) -> Int {
-    return row*_N + column
+    return isOpen(site: n + _N)
   }
 }
 
 extension Percolation: CustomDebugStringConvertible {
 
   var debugDescription: String {
+    return "\(gridDescription)\n\(info)"
+  }
+
+  var gridDescription: String {
     var description: String = "Percolation::"
     for (index, value) in _sites.enumerated() {
       // new line begins on the nth = k * n character, where k==>1, 2, 3...
@@ -342,6 +276,12 @@ extension Percolation: CustomDebugStringConvertible {
         description = "\(description)\t\(value)" }
     }
     return description
+  }
+
+  var info: String {
+    return
+      "Percolates?\t\(percolates())\n" +
+      "Open Sites:\t\(numberOfOpenSites(sites: _sites))\n"
   }
 }
 
@@ -383,16 +323,18 @@ func testPercolation() {
   percolation.open(index: percolation.cornerNE)
   percolation.open(index: percolation.cornerSW)
   print(percolation)
+}
 
+func testFillAndPercolate() {
   var filled = Percolation(n: 3)
-  print("\(filled)")
+  print(filled)
   filled.open(index: 0)
-  print("\(filled)")
+  print(filled)
   filled.open(index: 3)
-  print("\(filled)")
+  print(filled)
   filled.isFull(site: 3)
   filled.open(index: 6)
-  print("\(filled)")
+  print(filled)
   filled.isFull(site: 6)
   print(filled.percolates())
 }
@@ -401,14 +343,51 @@ func testPercolation() {
 ////////////////////////////////////////// Divider ///////////////////////////
 //MARK: PercolationStats
 
+protocol Stats {
+  func mean()           -> Double
+  func stDev()          -> Double
+  func confidenceLow()  -> Double
+  func confidenceHigh() -> Double
+}
+
 struct PercolationStats {
 
+  let _n: Int
+  let _trials: Int
+
   init(n: Int, trials: Int) {
-    for _ in 0...trials {
-      Percolation(n: n)
-    }
+    _trials = trials
+    _n      = n
   }
-  
+
+  func run(n: Int) -> Percolation {
+
+    var percolation: Percolation = Percolation(n: n)
+
+    while !percolation.percolates() {
+      let site = percolation.randomSite()
+      percolation.open(index: site)
+    }
+
+
+    return percolation
+  }
+}
+
+func testRun() {
+  let stats = PercolationStats(n: 20, trials: 100)
+  print(stats.run(n: 10))
+  print(stats.run(n: 10))
+  print(stats.run(n: 10))
+  print(stats.run(n: 10))
+  print(stats.run(n: 10))
+  print(stats.run(n: 10))
+  print(stats.run(n: 10))
+  print(stats.run(n: 10))
+  print(stats.run(n: 10))
+  print(stats.run(n: 10))
+  print(stats.run(n: 10))
+  print(stats.run(n: 10))
 }
 
 
