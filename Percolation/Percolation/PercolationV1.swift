@@ -84,19 +84,20 @@ struct Percolation {
 
   var rand: Int
 
-
   init(n: Int) {
     _N = n
     _NSquared = n * n
-    _sites = Array(repeating: 0, count: _NSquared - 1)
+    _sites = Array(repeating: 0, count: _NSquared)
 
     wQF = WeightedQuickFind(n: n)
+    /// FIXME!!!
     top = _NSquared
+    /// FIXME!!!
     bottom = _NSquared + 1
     cornerNW = 0
-    cornerNE = _N
-    cornerSW = _NSquared - 1
-    cornerSE = _NSquared - _N
+    cornerNE = (_N - 1)
+    cornerSW = _NSquared - _N
+    cornerSE = _NSquared - 1
 
 
     wQF.id.append(top)
@@ -112,7 +113,7 @@ struct Percolation {
 
     attachTopBottom()
 
-    testSystem()
+    //        testSystem()
 
   }
 
@@ -156,12 +157,20 @@ struct Percolation {
     return Bool(_sites[index])
   }
 
+  func isLeftmost(n: Int) -> Bool {
+    return (n % _N) == 0
+  }
+
+  func isRightmost(n: Int) -> Bool {
+    return ((n + 1) % _N) == 0
+  }
+
   func isOnTop(n: Int) -> Bool {
     return n < _N
   }
 
   func isOnBottom(n: Int) -> Bool {
-    return n > (_NSquared - _N)
+    return n >= (_NSquared - _N)
   }
 
   func isFull(site: Int) -> Bool {
@@ -184,12 +193,12 @@ struct Percolation {
   }
 
   mutating func testSystem() {
-    print(self._sites)
-    print(wQF.id)
-    print(percolates())
+    //        print(self._sites)
+    //        print(wQF.id)
+    //        print(percolates())
 
     let randomNum = createRandom()
-    print(randomNum)
+    print("\nOPEN SITE @ INDEX:\t\(randomNum)\n")
 
     open(index: randomNum)
 
@@ -220,9 +229,9 @@ struct Percolation {
       fill(index: ranVal + _N)
 
     }
-    print(self._sites)
-    print(wQF.id)
-    print(percolates())
+    //        print(self._sites)
+    //        print(wQF.id)
+    //        print(percolates())
   }
 
   func isCorner(n: Int) -> Bool {
@@ -253,27 +262,31 @@ struct Percolation {
   }
 
   func eastOpen(n: Int) -> Bool {
+    guard !isLeftmost(n: n) else { return false }
     let n = n - 1
     return isOpen(row: row(index: n), column: column(index: n))
   }
 
   func westOpen(n: Int) -> Bool {
+    guard !isRightmost(n: n) else { return false }
     let n = n + 1
     return isOpen(row: row(index: n), column: column(index: n))
   }
 
   func northOpen(n: Int) -> Bool {
+    guard !isOnTop(n: n) else { return false }
     let n = n - _N
     return isOpen(row: row(index: n), column: column(index: n))
   }
 
   func southOpen(n: Int) -> Bool {
+    guard !isOnBottom(n: n) else { return false }
     let n = n + _N
     return isOpen(row: row(index: n), column: column(index: n))
   }
 
   func isMultiple(n: Int) -> Bool {
-    return (n / _N == _N) || ( n == 0 )
+    return n % _N == 0
   }
 
   // init methods //
@@ -320,12 +333,10 @@ struct Percolation {
 extension Percolation: CustomDebugStringConvertible {
 
   var debugDescription: String {
-    var description: String = ""
+    var description: String = "Percolation::"
     for (index, value) in _sites.enumerated() {
-      let writeNewLine =
-        index > 0             // is not the first character to write
-          && index % _N == 0  // new line begins on the nth = k * n character, where k==>1, 2, 3...
-      if writeNewLine {
+      // new line begins on the nth = k * n character, where k==>1, 2, 3...
+      if index % _N == 0 {
         description = "\(description)\n\(value)" } else {
         description = "\(description)\t\(value)" }
     }
@@ -333,8 +344,43 @@ extension Percolation: CustomDebugStringConvertible {
   }
 }
 
-func percolationTest() {
-  let percolation = Percolation(n: 10)
+extension Percolation {
+
+  func testIndice(title: String, index: Int) -> String {
+    var message =
+    "\(title)" +
+    "\nsrc row col idx"
+    let row_     = row(index: index)
+    let column_  = column(index: index)
+    message = "\(message)\n" +
+              "\(index)\t" +
+              "\(row_)\t" +
+              "\(column_)\t" +
+              "\(siteIndex(row: row_, column: column_))"
+    return message
+  }
+}
+
+func testPercolation() {
+  var percolation = Percolation(n: 10)
+  print(percolation)
+  //percolation.testSystem()
+  print("\nTESTING...\nCHECK")
+  print(percolation.testIndice(title: "NORTHWEST CORNER",
+                               index: percolation.cornerNW))
+  print(percolation.testIndice(title: "NORTHEAST CORNER",
+                               index: percolation.cornerNE))
+  print(percolation.testIndice(title: "SOUTHWEST CORNER",
+                               index: percolation.cornerSW))
+  print(percolation.testIndice(title: "SOUTHEAST CORNER",
+                               index: percolation.cornerSE))
+  print("\nTESTING...\nOPEN CORNER SITES @ ARRAY BEGIN/END BOUNDARIES")
+  percolation.open(index: percolation.cornerNW)
+  percolation.open(index: percolation.cornerSE)
+  print(percolation)
+  print("\nTESTING...\nOPEN REMAINING CORNER SITES")
+  percolation.open(index: percolation.cornerNE)
+  percolation.open(index: percolation.cornerSW)
   print(percolation)
 }
 
@@ -349,7 +395,7 @@ struct PercolationStats {
       Percolation(n: n)
     }
   }
-
+  
 }
 
 
