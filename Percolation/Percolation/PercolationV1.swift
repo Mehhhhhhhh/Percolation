@@ -174,7 +174,8 @@ struct Percolation {
   }
 
   func isFull(site: Int) -> Bool {
-    return !(_sites[site] > 2)
+//    return !(_sites[site] > 2)
+    return isFullV2(site: site)
   }
 
   func isFullV2(site: Int) -> Bool {
@@ -382,6 +383,18 @@ func testPercolation() {
   percolation.open(index: percolation.cornerNE)
   percolation.open(index: percolation.cornerSW)
   print(percolation)
+
+  var filled = Percolation(n: 3)
+  print("\(filled)")
+  filled.open(index: 0)
+  print("\(filled)")
+  filled.open(index: 3)
+  print("\(filled)")
+  filled.isFull(site: 3)
+  filled.open(index: 6)
+  print("\(filled)")
+  filled.isFull(site: 6)
+  print(filled.percolates())
 }
 
 /////////////////////////////////////////////Class///////////////////////////
