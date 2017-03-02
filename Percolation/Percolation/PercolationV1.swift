@@ -1,4 +1,5 @@
 import GameplayKit
+import Foundation
 
 // extension method for converting Integer to Boolean
 extension Bool {
@@ -149,8 +150,8 @@ struct Percolation {
     return false
   }
 
-  func numberOfOpenSites(sites: [Int]) -> Int {
-    return sites.reduce(0, +)
+  func numberOfOpenSites() -> Int {
+    return _sites.reduce(0, +)
   }
 
   func percolates() -> Bool {
@@ -281,7 +282,7 @@ extension Percolation: CustomDebugStringConvertible {
   var info: String {
     return
       "Percolates?\t\(percolates())\n" +
-      "Open Sites:\t\(numberOfOpenSites(sites: _sites))\n"
+      "Open Sites:\t\(numberOfOpenSites())\n"
   }
 }
 
@@ -369,44 +370,33 @@ struct PercolationStats {
       percolation.open(index: site)
     }
 
-
     return percolation
   }
 }
 
-func testRun() {
-  let stats = PercolationStats(n: 20, trials: 100)
-  print(stats.run(n: 10))
-  print(stats.run(n: 10))
-  print(stats.run(n: 10))
-  print(stats.run(n: 10))
-  print(stats.run(n: 10))
-  print(stats.run(n: 10))
-  print(stats.run(n: 10))
-  print(stats.run(n: 10))
-  print(stats.run(n: 10))
-  print(stats.run(n: 10))
-  print(stats.run(n: 10))
-  print(stats.run(n: 10))
+func testRun(n: Int, trials: Int) {
+  let stats = PercolationStats(n: n, trials: trials)
+  var runs: [Percolation] = []
+
+  for _ in 0..<trials {
+    runs.append(stats.run(n: n))
+  }
+
+  let sum = runs.flatMap(){ perc in
+      perc.numberOfOpenSites()
+    }.reduce(0, +)
+  let mean      = Double(sum) / Double(runs.count) // Double(runs.count)
+
+  let squared = runs.flatMap(){ perc in
+      let delta = Double(perc.numberOfOpenSites()) - mean
+      return pow(delta, 2)
+    }.reduce(Double(0), +)
+  let variance  = Double(squared) / Double(runs.count)
+  let stDev     = sqrt(variance)
+
+  let printout  = String(format: "%.2f\t%.2f\t%.2f", mean, variance, stDev)
+  let runNumbers  = runs.flatMap() { perc in perc.numberOfOpenSites() }
+  print("N\tTrials\n\(n)\t\(trials)")
+  print("mean\tvari \tstDev\n\(printout)")
+
 }
-
-
-
-
-
-
-
-
-
-
-
-////////////////////////////////////////// Testing ///////////////////////////
-//////////////////////////////////////////// Space //////////////////////////
-
-
-
-
-
-
-
-

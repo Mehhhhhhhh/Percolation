@@ -1,0 +1,39 @@
+N	Trials
+10	2
+mean	vari 	stDev
+63.50	132.25	11.50
+
+N	Trials
+10	5
+mean	vari 	stDev
+61.00	25.20	5.02
+
+N	Trials
+10	10
+mean	vari 	stDev
+60.10	39.09	6.25
+
+N	Trials
+10	100
+mean	vari 	stDev
+58.62	57.84	7.60
+
+N	Trials
+10	1000
+mean	vari 	stDev
+58.58	53.81	7.34
+
+N	Trials
+10	10000
+mean	vari 	stDev
+58.78	51.94	7.21
+
+N	Trials
+10	100000
+mean	vari 	stDev
+58.73	53.76	7.33
+
+N	Trials
+10	1000000
+mean	vari 	stDev
+58.76	53.59	7.32

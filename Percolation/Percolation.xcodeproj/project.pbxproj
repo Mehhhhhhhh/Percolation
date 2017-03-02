@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9042C7A91E662AC800F11EF6 /* NOTES.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9042C7A81E662AC800F11EF6 /* NOTES.txt */; };
+		90BE6E231E67213F00B08D28 /* WeightedQuickFind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BE6E221E67213F00B08D28 /* WeightedQuickFind.swift */; };
+		90BE6E251E67262900B08D28 /* EagerQuickFind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BE6E241E67262900B08D28 /* EagerQuickFind.swift */; };
+		90BE6E271E672EB500B08D28 /* UnionFind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BE6E261E672EB500B08D28 /* UnionFind.swift */; };
+		90BE6E291E67326500B08D28 /* LazyQuickUnion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BE6E281E67326500B08D28 /* LazyQuickUnion.swift */; };
 		90F87A021E65569900D0E626 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F87A011E65569900D0E626 /* AppDelegate.swift */; };
 		90F87A041E65569900D0E626 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F87A031E65569900D0E626 /* ViewController.swift */; };
 		90F87A071E65569A00D0E626 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90F87A051E65569A00D0E626 /* Main.storyboard */; };
@@ -16,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9042C7A81E662AC800F11EF6 /* NOTES.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NOTES.txt; sourceTree = "<group>"; };
+		90BE6E221E67213F00B08D28 /* WeightedQuickFind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeightedQuickFind.swift; path = UnionFind/WeightedQuickFind.swift; sourceTree = "<group>"; };
+		90BE6E241E67262900B08D28 /* EagerQuickFind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EagerQuickFind.swift; path = UnionFind/EagerQuickFind.swift; sourceTree = "<group>"; };
+		90BE6E261E672EB500B08D28 /* UnionFind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnionFind.swift; path = UnionFind/UnionFind.swift; sourceTree = "<group>"; };
+		90BE6E281E67326500B08D28 /* LazyQuickUnion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LazyQuickUnion.swift; path = UnionFind/LazyQuickUnion.swift; sourceTree = "<group>"; };
 		90F879FE1E65569900D0E626 /* Percolation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Percolation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90F87A011E65569900D0E626 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90F87A031E65569900D0E626 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +48,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		90BE6E211E67211E00B08D28 /* UnionFind */ = {
+			isa = PBXGroup;
+			children = (
+				90BE6E221E67213F00B08D28 /* WeightedQuickFind.swift */,
+				90BE6E241E67262900B08D28 /* EagerQuickFind.swift */,
+				90BE6E261E672EB500B08D28 /* UnionFind.swift */,
+				90BE6E281E67326500B08D28 /* LazyQuickUnion.swift */,
+			);
+			name = UnionFind;
+			sourceTree = "<group>";
+		};
 		90F879F51E65569700D0E626 = {
 			isa = PBXGroup;
 			children = (
@@ -57,6 +78,8 @@
 		90F87A001E65569900D0E626 /* Percolation */ = {
 			isa = PBXGroup;
 			children = (
+				90BE6E211E67211E00B08D28 /* UnionFind */,
+				9042C7A81E662AC800F11EF6 /* NOTES.txt */,
 				90F87A151E65723500D0E626 /* WeightedQuickFind.playground */,
 				90F87A011E65569900D0E626 /* AppDelegate.swift */,
 				90F87A031E65569900D0E626 /* ViewController.swift */,
@@ -128,6 +151,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9042C7A91E662AC800F11EF6 /* NOTES.txt in Resources */,
 				90F87A0C1E65569A00D0E626 /* LaunchScreen.storyboard in Resources */,
 				90F87A091E65569A00D0E626 /* Assets.xcassets in Resources */,
 				90F87A071E65569A00D0E626 /* Main.storyboard in Resources */,
@@ -142,7 +166,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				90F87A041E65569900D0E626 /* ViewController.swift in Sources */,
+				90BE6E231E67213F00B08D28 /* WeightedQuickFind.swift in Sources */,
 				90F87A141E6556D400D0E626 /* PercolationV1.swift in Sources */,
+				90BE6E251E67262900B08D28 /* EagerQuickFind.swift in Sources */,
+				90BE6E271E672EB500B08D28 /* UnionFind.swift in Sources */,
+				90BE6E291E67326500B08D28 /* LazyQuickUnion.swift in Sources */,
 				90F87A021E65569900D0E626 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +335,7 @@
 				90F87A121E65569A00D0E626 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
