@@ -47,7 +47,7 @@ class WeightedQuickFind {
 
     if (sz[i] < sz[j]) {
       id[i] = j
-      sz[i] += sz[j]
+      sz[j] += sz[i]
     } else {
       id[j] = i
       sz[i] += sz[j]
