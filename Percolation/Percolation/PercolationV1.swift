@@ -28,6 +28,12 @@ class WeightedQuickFind {
       id[i] = id[id[i]]
       i = id[i]
     }
+    
+    /*
+     if i != id[i] {
+        id[i]
+     }
+     */
 
     return i
   }
