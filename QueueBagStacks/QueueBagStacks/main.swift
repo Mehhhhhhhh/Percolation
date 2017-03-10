@@ -8,5 +8,11 @@
 
 import Foundation
 
-print("Hello, World!")
+var stack: StackAPI = LinkedListStack()
+stack.push(item: "to")
+stack.push(item: "be")
+stack.push(item: "or")
+print(stack)
+print(stack.pop())
+print(stack)
 

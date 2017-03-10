@@ -40,7 +40,7 @@ struct LinkedListStack: StackAPI {
 
   //!!!TODO: algorithm analysis to determine cost of operation
   func isEmpty() -> Bool {
-    return size() > 0
+    return size() == 0
   }
 
   func size() -> Int {
