@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9071B62D1E69FC1000629D70 /* LinkedListStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9071B62C1E69FC1000629D70 /* LinkedListStack.swift */; };
-		90BE6E4A1E68081C00B08D28 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BE6E491E68081C00B08D28 /* main.swift */; };
-		90BE6E521E69050D00B08D28 /* StackAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BE6E511E69050D00B08D28 /* StackAPI.swift */; };
+		903299031E70E317000F5744 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903299021E70E317000F5744 /* main.swift */; };
+		9032990A1E70E33A000F5744 /* 3SUM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903299091E70E33A000F5744 /* 3SUM.swift */; };
+		9032990C1E70E64A000F5744 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9032990B1E70E64A000F5744 /* Random.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		90BE6E441E68081C00B08D28 /* CopyFiles */ = {
+		903298FD1E70E317000F5744 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -25,14 +25,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9071B62C1E69FC1000629D70 /* LinkedListStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinkedListStack.swift; path = Stack/LinkedListStack.swift; sourceTree = "<group>"; };
-		90BE6E461E68081C00B08D28 /* QueueBagStacks */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = QueueBagStacks; sourceTree = BUILT_PRODUCTS_DIR; };
-		90BE6E491E68081C00B08D28 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		90BE6E511E69050D00B08D28 /* StackAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StackAPI.swift; path = Stack/StackAPI.swift; sourceTree = "<group>"; };
+		903298FF1E70E317000F5744 /* Analysis */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Analysis; sourceTree = BUILT_PRODUCTS_DIR; };
+		903299021E70E317000F5744 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		903299091E70E33A000F5744 /* 3SUM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 3SUM.swift; sourceTree = "<group>"; };
+		9032990B1E70E64A000F5744 /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		90BE6E431E68081C00B08D28 /* Frameworks */ = {
+		903298FC1E70E317000F5744 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,109 +42,101 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		90BE6E3D1E68081C00B08D28 = {
+		903298F61E70E317000F5744 = {
 			isa = PBXGroup;
 			children = (
-				90BE6E481E68081C00B08D28 /* QueueBagStacks */,
-				90BE6E471E68081C00B08D28 /* Products */,
+				903299011E70E317000F5744 /* Analysis */,
+				903299001E70E317000F5744 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		90BE6E471E68081C00B08D28 /* Products */ = {
+		903299001E70E317000F5744 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				90BE6E461E68081C00B08D28 /* QueueBagStacks */,
+				903298FF1E70E317000F5744 /* Analysis */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		90BE6E481E68081C00B08D28 /* QueueBagStacks */ = {
+		903299011E70E317000F5744 /* Analysis */ = {
 			isa = PBXGroup;
 			children = (
-				90BE6E501E6904B100B08D28 /* Stack */,
-				90BE6E491E68081C00B08D28 /* main.swift */,
+				903299021E70E317000F5744 /* main.swift */,
+				903299091E70E33A000F5744 /* 3SUM.swift */,
+				9032990B1E70E64A000F5744 /* Random.swift */,
 			);
-			path = QueueBagStacks;
-			sourceTree = "<group>";
-		};
-		90BE6E501E6904B100B08D28 /* Stack */ = {
-			isa = PBXGroup;
-			children = (
-				90BE6E511E69050D00B08D28 /* StackAPI.swift */,
-				9071B62C1E69FC1000629D70 /* LinkedListStack.swift */,
-			);
-			name = Stack;
+			path = Analysis;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		90BE6E451E68081C00B08D28 /* QueueBagStacks */ = {
+		903298FE1E70E317000F5744 /* Analysis */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 90BE6E4D1E68081C00B08D28 /* Build configuration list for PBXNativeTarget "QueueBagStacks" */;
+			buildConfigurationList = 903299061E70E317000F5744 /* Build configuration list for PBXNativeTarget "Analysis" */;
 			buildPhases = (
-				90BE6E421E68081C00B08D28 /* Sources */,
-				90BE6E431E68081C00B08D28 /* Frameworks */,
-				90BE6E441E68081C00B08D28 /* CopyFiles */,
+				903298FB1E70E317000F5744 /* Sources */,
+				903298FC1E70E317000F5744 /* Frameworks */,
+				903298FD1E70E317000F5744 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = QueueBagStacks;
-			productName = QueueBagStacks;
-			productReference = 90BE6E461E68081C00B08D28 /* QueueBagStacks */;
+			name = Analysis;
+			productName = Analysis;
+			productReference = 903298FF1E70E317000F5744 /* Analysis */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		90BE6E3E1E68081C00B08D28 /* Project object */ = {
+		903298F71E70E317000F5744 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = ForeCyte;
 				TargetAttributes = {
-					90BE6E451E68081C00B08D28 = {
+					903298FE1E70E317000F5744 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = NL9DRERKET;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 90BE6E411E68081C00B08D28 /* Build configuration list for PBXProject "QueueBagStacks" */;
+			buildConfigurationList = 903298FA1E70E317000F5744 /* Build configuration list for PBXProject "Analysis" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 90BE6E3D1E68081C00B08D28;
-			productRefGroup = 90BE6E471E68081C00B08D28 /* Products */;
+			mainGroup = 903298F61E70E317000F5744;
+			productRefGroup = 903299001E70E317000F5744 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				90BE6E451E68081C00B08D28 /* QueueBagStacks */,
+				903298FE1E70E317000F5744 /* Analysis */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		90BE6E421E68081C00B08D28 /* Sources */ = {
+		903298FB1E70E317000F5744 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90BE6E4A1E68081C00B08D28 /* main.swift in Sources */,
-				90BE6E521E69050D00B08D28 /* StackAPI.swift in Sources */,
-				9071B62D1E69FC1000629D70 /* LinkedListStack.swift in Sources */,
+				903299031E70E317000F5744 /* main.swift in Sources */,
+				9032990A1E70E33A000F5744 /* 3SUM.swift in Sources */,
+				9032990C1E70E64A000F5744 /* Random.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		90BE6E4B1E68081C00B08D28 /* Debug */ = {
+		903299041E70E317000F5744 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -192,7 +184,7 @@
 			};
 			name = Debug;
 		};
-		90BE6E4C1E68081C00B08D28 /* Release */ = {
+		903299051E70E317000F5744 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -232,7 +224,7 @@
 			};
 			name = Release;
 		};
-		90BE6E4E1E68081C00B08D28 /* Debug */ = {
+		903299071E70E317000F5744 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = NL9DRERKET;
@@ -241,7 +233,7 @@
 			};
 			name = Debug;
 		};
-		90BE6E4F1E68081C00B08D28 /* Release */ = {
+		903299081E70E317000F5744 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = NL9DRERKET;
@@ -253,25 +245,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		90BE6E411E68081C00B08D28 /* Build configuration list for PBXProject "QueueBagStacks" */ = {
+		903298FA1E70E317000F5744 /* Build configuration list for PBXProject "Analysis" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				90BE6E4B1E68081C00B08D28 /* Debug */,
-				90BE6E4C1E68081C00B08D28 /* Release */,
+				903299041E70E317000F5744 /* Debug */,
+				903299051E70E317000F5744 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		90BE6E4D1E68081C00B08D28 /* Build configuration list for PBXNativeTarget "QueueBagStacks" */ = {
+		903299061E70E317000F5744 /* Build configuration list for PBXNativeTarget "Analysis" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				90BE6E4E1E68081C00B08D28 /* Debug */,
-				90BE6E4F1E68081C00B08D28 /* Release */,
+				903299071E70E317000F5744 /* Debug */,
+				903299081E70E317000F5744 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 90BE6E3E1E68081C00B08D28 /* Project object */;
+	rootObject = 903298F71E70E317000F5744 /* Project object */;
 }

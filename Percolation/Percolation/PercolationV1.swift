@@ -14,8 +14,7 @@ class WeightedQuickFind {
   var sz: [Int] = []
 
   init(n: Int) {
-    let N = n * n
-    for i in 0..<N {
+    for i in 0..<n {
       id.append(i)
       sz.append(i)
       sz[i] = 1
@@ -63,16 +62,8 @@ class WeightedQuickFind {
   }
 }
 
-//extension WeightedQuickFind: CustomDebugStringConvertible {
-//
-//  var debugDescription: String {
-//
-//
-//  }
-//}
-
 ////////////////////////// Class ////////////////////////////////////////
-/////////////////////////// Divider //////////////////////////////////////
+////////////////////////// Divider //////////////////////////////////////
 
 struct Percolation {
 
@@ -96,7 +87,7 @@ struct Percolation {
     _NSquared = n * n
     _sites = Array(repeating: 0, count: _NSquared)
 
-    wQF = WeightedQuickFind(n: n)
+    wQF = WeightedQuickFind(n: _NSquared+2)
     /// FIXME!!!
     top = _NSquared
     /// FIXME!!!

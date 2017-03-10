@@ -14,8 +14,7 @@ class WeightedQuickFindV2 {
   var size: [Int] = []
 
   init(_ n: Int) {
-    let square = n*n
-    for index in 0..<square {
+    for index in 0..<n {
       ids.append(index)
       size.append(1)
     }

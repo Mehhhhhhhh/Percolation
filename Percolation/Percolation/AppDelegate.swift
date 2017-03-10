@@ -16,8 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
-    testPercolation()
-    testFillAndPercolate()
+//    testPercolation()
+//    testFillAndPercolate()
+//    let stats = PercolationStats(n: 10, trials: 10000)
+    print(testRun(n: 10, trials: 1000000))
     return true
   }
 

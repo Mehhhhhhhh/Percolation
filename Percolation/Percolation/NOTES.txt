@@ -37,3 +37,8 @@ N	Trials
 10	1000000
 mean	vari 	stDev
 58.76	53.59	7.32
+
+N	Trials
+10	1000000
+mean	vari 	stDev
+58.76	53.62	7.32
