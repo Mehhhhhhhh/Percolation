@@ -14,10 +14,3 @@ protocol StackAPI {
   func isEmpty()  -> Bool
   func size()     -> Int
 }
-
-indirect enum StackNode {
-  case Progenitor
-  case Item(String)
-  case Next(StackNode)
-}
-

@@ -1,0 +1,32 @@
+TODO: 
+
+lecture notes
+
+LinkedListStack
+_head: StackNode?
+  Optionals, the irritation is the effect down the chain of data types, functions+extensions.
+  what is the natural order of events when popping an item off the stack when
+  there is nothing in the stack?
+Narrative imagine a stack of Pringles. i go to pop a chip but there is nothing
+  there. Either the box is empty or the box does not exist.
+Invariant a LinkedListStack has a `head` StackNode at initialization
+
+Want to apply extensions to 'lower bound' of a data type.
+Ex.
+extension StackNode? {
+
+  func size() -> Int {
+    return size(self)
+  }
+
+  func size(_ node: StackNode?) -> Int {
+    guard let node_ = node else { return 0 } // node_: StackNode, node is non-optional
+    return 1 + node_.next.size()
+  }
+}
+
+Cont'd...
+  Apply and test a default == Self for an extension function with 1 parameter
+equal to Self. Modelled after StackNode.size(...)
+
+

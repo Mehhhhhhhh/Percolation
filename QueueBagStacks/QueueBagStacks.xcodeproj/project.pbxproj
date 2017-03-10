@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9071B62D1E69FC1000629D70 /* LinkedListStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9071B62C1E69FC1000629D70 /* LinkedListStack.swift */; };
+		9032990E1E727E52000F5744 /* StackNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9032990D1E727E52000F5744 /* StackNode.swift */; };
+		903299101E72806C000F5744 /* LinkedListStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9032990F1E72806C000F5744 /* LinkedListStack.swift */; };
+		9071B62D1E69FC1000629D70 /* LinkedListStackDisjointSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9071B62C1E69FC1000629D70 /* LinkedListStackDisjointSet.swift */; };
 		90BE6E4A1E68081C00B08D28 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BE6E491E68081C00B08D28 /* main.swift */; };
 		90BE6E521E69050D00B08D28 /* StackAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BE6E511E69050D00B08D28 /* StackAPI.swift */; };
 /* End PBXBuildFile section */
@@ -25,7 +27,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9071B62C1E69FC1000629D70 /* LinkedListStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinkedListStack.swift; path = Stack/LinkedListStack.swift; sourceTree = "<group>"; };
+		9032990D1E727E52000F5744 /* StackNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StackNode.swift; path = Stack/StackNode.swift; sourceTree = "<group>"; };
+		9032990F1E72806C000F5744 /* LinkedListStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinkedListStack.swift; path = Stack/LinkedListStack.swift; sourceTree = "<group>"; };
+		903299111E72A722000F5744 /* Notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notes.txt; sourceTree = "<group>"; };
+		9071B62C1E69FC1000629D70 /* LinkedListStackDisjointSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinkedListStackDisjointSet.swift; path = Stack/LinkedListStackDisjointSet.swift; sourceTree = "<group>"; };
 		90BE6E461E68081C00B08D28 /* QueueBagStacks */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = QueueBagStacks; sourceTree = BUILT_PRODUCTS_DIR; };
 		90BE6E491E68081C00B08D28 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		90BE6E511E69050D00B08D28 /* StackAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StackAPI.swift; path = Stack/StackAPI.swift; sourceTree = "<group>"; };
@@ -61,6 +66,7 @@
 		90BE6E481E68081C00B08D28 /* QueueBagStacks */ = {
 			isa = PBXGroup;
 			children = (
+				903299111E72A722000F5744 /* Notes.txt */,
 				90BE6E501E6904B100B08D28 /* Stack */,
 				90BE6E491E68081C00B08D28 /* main.swift */,
 			);
@@ -71,7 +77,9 @@
 			isa = PBXGroup;
 			children = (
 				90BE6E511E69050D00B08D28 /* StackAPI.swift */,
-				9071B62C1E69FC1000629D70 /* LinkedListStack.swift */,
+				9071B62C1E69FC1000629D70 /* LinkedListStackDisjointSet.swift */,
+				9032990D1E727E52000F5744 /* StackNode.swift */,
+				9032990F1E72806C000F5744 /* LinkedListStack.swift */,
 			);
 			name = Stack;
 			sourceTree = "<group>";
@@ -137,7 +145,9 @@
 			files = (
 				90BE6E4A1E68081C00B08D28 /* main.swift in Sources */,
 				90BE6E521E69050D00B08D28 /* StackAPI.swift in Sources */,
-				9071B62D1E69FC1000629D70 /* LinkedListStack.swift in Sources */,
+				9032990E1E727E52000F5744 /* StackNode.swift in Sources */,
+				903299101E72806C000F5744 /* LinkedListStack.swift in Sources */,
+				9071B62D1E69FC1000629D70 /* LinkedListStackDisjointSet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

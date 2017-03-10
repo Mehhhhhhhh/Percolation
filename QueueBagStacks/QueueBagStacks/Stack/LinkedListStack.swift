@@ -8,110 +8,40 @@
 
 import Foundation
 
-indirect enum Node {
-  case Progenitor
-  case Scheme([Node])
-  case Item(String)
-  case Next(Node)
-}
-
-extension Node {
-
-  func size() -> Int {
-    return size(node: self)
-  }
-
-  func size(node: Node) -> Int {
-    var count: Int = 1
-    // Scheme
-    switch node {
-    case .Scheme(let nodes):
-      for index in 0..<nodes.count {
-        count += size(node: nodes[index])
-      }
-    case .Item(_):
-      count += 1
-    case .Next(let node):
-      count += size(node: node)
-    case .Progenitor: break
-    }
-    return count
-  }
-}
-
-extension Node {
-
-  func pop(node: Node) -> String {
-    switch node {
-    case .Item(let item):
-      return item
-    case .Next(let node):
-      return pop(node: node)
-    case .Scheme(_), .Progenitor:
-      return ""
-
-    }
-  }
-}
-
-// Instant access requires that we pull 
-// out a reducible set, or a structure with expectations
-
-/*
- * Instant Access
- */
-extension Node {
-
-  func item() -> Node {
-    return item(node: self)
-  }
-
-  func item(node: Node) -> Node {
-    switch node {
-//    case .Scheme(let nodes):
-    // 1. item is the first item
-    default:
-      return Node.Progenitor
-    }
-  }
-}
-
 struct LinkedListStack: StackAPI {
 
-  var first: Node
+  private var _head: StackNode?
+
+  /// Pushes an `item` onto the top of the stack
+  mutating func push(item: String) {
+    /* Sequence of Steps
+     *  Append at Top of the Stack
+     *    tmp, Copy existing head Node
+     *    new, Create new Node
+     *      Set `item`
+     *      Set `next` = tmp
+     *    Set head to new Node
+     */
+    func predecessor() -> (() -> StackNode)? {
+      guard let head = self._head else { return nil }
+      return { head }
+    }
+
+    let successor  = StackNode(item, followedBy: predecessor())
+    _head  = successor
+  }
+
+  /// Returns the top item in the stack
+  mutating func pop() -> String {
+    return "NOT IMPLEMENTED"
+  }
 
   func isEmpty() -> Bool {
-    switch first {
-    case .Item(_):
-      return true
-    default:
-      return false
-    }
-  }
-
-  mutating func push(item: String) {
-    let old = first
-    first   = Node.Scheme([.Item(item), .Next(old)])
-  }
-
-  /*
-   *  q: how do we pop an enumeration of Nodes 
-   *  a: if
-   */
-  mutating func pop() -> String {
-    let item: String
-    switch first {
-    case .Item(let string):
-      item = string
-//    case .Next(let node): break;
-//      item =
-    default:
-      item = "" // should we throw an error here?
-    }
-    return item
+    return _head != nil
   }
 
   func size() -> Int {
-    return first.size()
+    guard let head = _head else { return 0 }
+    return head.size()
   }
 }
