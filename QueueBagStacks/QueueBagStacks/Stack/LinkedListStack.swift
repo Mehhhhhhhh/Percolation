@@ -68,7 +68,7 @@ extension Node {
 
   func item(node: Node) -> Node {
     switch node {
-    case .Scheme(let nodes):
+//    case .Scheme(let nodes):
     // 1. item is the first item
     default:
       return Node.Progenitor
@@ -103,11 +103,12 @@ struct LinkedListStack: StackAPI {
     switch first {
     case .Item(let string):
       item = string
-    case .Next(let node): break;
+//    case .Next(let node): break;
 //      item =
     default:
       item = "" // should we throw an error here?
     }
+    return item
   }
 
   func size() -> Int {
