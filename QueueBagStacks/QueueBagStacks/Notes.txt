@@ -29,4 +29,8 @@ Cont'd...
   Apply and test a default == Self for an extension function with 1 parameter
 equal to Self. Modelled after StackNode.size(...)
 
+Thought a data type morphs through its stages. At an early stage some variables
+may be missing, in place or empty. Given a map of a type, the variables sort of
+blink in and out depending on if at that stage it is optional or not. 
+
 

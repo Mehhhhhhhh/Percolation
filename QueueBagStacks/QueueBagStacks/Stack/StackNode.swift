@@ -8,12 +8,15 @@
 
 import Foundation
 
-// Non-generic string implementation of StackNode
+// String implementation of StackNode
 class StackNode {
   let item: String
 
+  /// Discussion  parameterless function to compute the `next` node in the 
+  //  linked list.
   typealias NextNode = () -> StackNode
-  private let _next: (() -> StackNode)?
+
+  private let _next: NextNode?
   var next: StackNode? {
     get {
       guard let f = _next else { return nil }
@@ -29,10 +32,13 @@ class StackNode {
 
 extension StackNode {
 
+  /// Returns the size of `Self`
   func size() -> Int {
     return size(self)
   }
 
+  /// Recursively computes the size of a node which is 1 plus the number of
+  /// `next` descendents
   func size(_ node: StackNode?) -> Int {
     guard let node_ = node else { return 0 }
     if let next_ = node_.next { return 1 + size(next_) }

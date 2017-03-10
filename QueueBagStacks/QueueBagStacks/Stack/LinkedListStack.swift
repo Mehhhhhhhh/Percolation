@@ -33,11 +33,14 @@ struct LinkedListStack: StackAPI {
 
   /// Returns the top item in the stack
   mutating func pop() -> String {
-    return "NOT IMPLEMENTED"
+    guard !isEmpty(), let pops = _head else { return "" }
+    _head = pops.next
+    return pops.item
   }
 
+  //!!!TODO: algorithm analysis to determine cost of operation
   func isEmpty() -> Bool {
-    return _head != nil
+    return size() > 0
   }
 
   func size() -> Int {
