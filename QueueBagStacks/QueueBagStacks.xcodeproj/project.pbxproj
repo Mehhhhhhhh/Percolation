@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9032990E1E727E52000F5744 /* StackNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9032990D1E727E52000F5744 /* StackNode.swift */; };
 		903299101E72806C000F5744 /* LinkedListStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9032990F1E72806C000F5744 /* LinkedListStack.swift */; };
+		903299131E73758E000F5744 /* StackOfString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903299121E73758E000F5744 /* StackOfString.swift */; };
+		903299151E770F2B000F5744 /* ArrayStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903299141E770F2B000F5744 /* ArrayStack.swift */; };
 		9071B62D1E69FC1000629D70 /* LinkedListStackDisjointSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9071B62C1E69FC1000629D70 /* LinkedListStackDisjointSet.swift */; };
 		90BE6E4A1E68081C00B08D28 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BE6E491E68081C00B08D28 /* main.swift */; };
 		90BE6E521E69050D00B08D28 /* StackAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BE6E511E69050D00B08D28 /* StackAPI.swift */; };
@@ -30,6 +32,8 @@
 		9032990D1E727E52000F5744 /* StackNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StackNode.swift; path = Stack/StackNode.swift; sourceTree = "<group>"; };
 		9032990F1E72806C000F5744 /* LinkedListStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinkedListStack.swift; path = Stack/LinkedListStack.swift; sourceTree = "<group>"; };
 		903299111E72A722000F5744 /* Notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notes.txt; sourceTree = "<group>"; };
+		903299121E73758E000F5744 /* StackOfString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StackOfString.swift; path = Stack/StackOfString.swift; sourceTree = "<group>"; };
+		903299141E770F2B000F5744 /* ArrayStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArrayStack.swift; path = Stack/ArrayStack.swift; sourceTree = "<group>"; };
 		9071B62C1E69FC1000629D70 /* LinkedListStackDisjointSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinkedListStackDisjointSet.swift; path = Stack/LinkedListStackDisjointSet.swift; sourceTree = "<group>"; };
 		90BE6E461E68081C00B08D28 /* QueueBagStacks */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = QueueBagStacks; sourceTree = BUILT_PRODUCTS_DIR; };
 		90BE6E491E68081C00B08D28 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -76,10 +80,12 @@
 		90BE6E501E6904B100B08D28 /* Stack */ = {
 			isa = PBXGroup;
 			children = (
-				90BE6E511E69050D00B08D28 /* StackAPI.swift */,
-				9071B62C1E69FC1000629D70 /* LinkedListStackDisjointSet.swift */,
-				9032990D1E727E52000F5744 /* StackNode.swift */,
 				9032990F1E72806C000F5744 /* LinkedListStack.swift */,
+				9071B62C1E69FC1000629D70 /* LinkedListStackDisjointSet.swift */,
+				90BE6E511E69050D00B08D28 /* StackAPI.swift */,
+				9032990D1E727E52000F5744 /* StackNode.swift */,
+				903299121E73758E000F5744 /* StackOfString.swift */,
+				903299141E770F2B000F5744 /* ArrayStack.swift */,
 			);
 			name = Stack;
 			sourceTree = "<group>";
@@ -143,6 +149,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				903299151E770F2B000F5744 /* ArrayStack.swift in Sources */,
+				903299131E73758E000F5744 /* StackOfString.swift in Sources */,
 				90BE6E4A1E68081C00B08D28 /* main.swift in Sources */,
 				90BE6E521E69050D00B08D28 /* StackAPI.swift in Sources */,
 				9032990E1E727E52000F5744 /* StackNode.swift in Sources */,
