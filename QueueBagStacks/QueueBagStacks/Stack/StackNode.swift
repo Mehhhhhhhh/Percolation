@@ -12,8 +12,8 @@ import Foundation
 class StackNode {
   let item: String
 
-  /// Discussion  parameterless function to compute the `next` node in the 
-  //  linked list.
+  /// Discussion  parameterless function to compute the `next` node in the
+  ///  linked list.
   typealias NextNode = () -> StackNode
 
   private let _next: NextNode?

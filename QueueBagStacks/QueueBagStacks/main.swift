@@ -12,7 +12,10 @@ var stack: StackAPI = LinkedListStack()
 stack.push(item: "to")
 stack.push(item: "be")
 stack.push(item: "or")
-print(stack)
+print(stack.size())
 print(stack.pop())
 print(stack)
+
+
+print("-------------\n---Divider---\n-------------")
 
