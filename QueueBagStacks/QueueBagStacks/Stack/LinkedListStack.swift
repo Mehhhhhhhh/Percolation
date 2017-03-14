@@ -20,7 +20,7 @@ struct LinkedListStack: StackAPI {
      *    new, Create new Node
      *      Set `item`
      *      Set `next` = tmp
-     *    Set head to new Node
+     *  Set head to new Node
      */
     func predecessor() -> (() -> StackNode)? {
       guard let head = self._head else { return nil }
