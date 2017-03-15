@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol aQueueAPI {
+protocol AQueueAPI {
   mutating func enqueue(item: String)
   mutating func dequeue() -> String
   func isEmpty() -> Bool

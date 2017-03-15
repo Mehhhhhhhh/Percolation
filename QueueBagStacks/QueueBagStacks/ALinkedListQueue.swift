@@ -1,5 +1,5 @@
 //
-//  aArrayQueue.swift
+//  aLinkedListQueue.swift
 //  QueueBagStacks
 //
 //  Created by Alex Blanchard on 3/14/17.
@@ -8,20 +8,15 @@
 
 import Foundation
 
-struct aArrayQueue: aQueueAPI {
+struct ALinkedListQueue: AQueueAPI {
   
-  private var queueArray: [String]
-  
-  init(n: Int) {
-    queueArray = Array(repeating: "", count: n)
-  }
+  //private var _head = AQueueNode?
   
   mutating func enqueue(item: String) {
-    queueArray.append(item)
+    
   }
   
   mutating func dequeue() -> String {
-    queueArray.remove(at: 0)
     return ""
   }
   
@@ -30,7 +25,8 @@ struct aArrayQueue: aQueueAPI {
   }
   
   func size() -> Int {
-    return queueArray.count
+    return 1
   }
-
+  
+  
 }
