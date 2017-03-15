@@ -21,7 +21,7 @@ struct aArrayQueue: aQueueAPI {
   }
   
   mutating func dequeue() -> String {
-    queueArray.remove(at: queueArray.)
+    queueArray.remove(at: 0)
     return ""
   }
   
