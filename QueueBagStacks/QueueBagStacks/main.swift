@@ -7,25 +7,27 @@
 //
 
 import Foundation
+//
+//var stack: StackAPI = LinkedListStack()
+//stack.push(item: "to")
+//stack.push(item: "be")
+//stack.push(item: "or")
+//print(stack.size())
+//print(stack.pop())
+//print(stack.pop())
+//print(stack.pop())
+//print(stack.pop())
+//print(stack)
+//print()
 
-var stack: StackAPI = LinkedListStack()
-stack.push(item: "to")
-stack.push(item: "be")
-stack.push(item: "or")
-print(stack.size())
-print(stack.pop())
-print(stack.pop())
-print(stack.pop())
-print(stack.pop())
-print(stack)
-print()
-
-
-//<<<<<<< HEAD
 print("-------------\n---Divider---\n-------------")
-//=======
-//>>>>>>> f2c3260665bb2d0e26d755841cc71aef797e31b9
 
-var arrStack = ArrayStack(10)
 
-print(arrStack)
+var queue = LinkedListQueue()
+queue.push(item: "first")
+queue.push(item:  "second")
+queue.push(item: "third")
+queue.push(item: "fourth")
+
+print(String(reflecting: queue))
+//print(queue.debugDescription)
