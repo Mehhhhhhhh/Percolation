@@ -1,0 +1,31 @@
+Queue Custom Debuggable String Format
+
+Objective:
+	Display the queue in a spatially informative detail
+	
+Format:
+	Assume queue of First Name, Middle Name, Last Name -> 
+	--------------------------
+	push	Jarrod 
+	--------------------------
+	
+	--------
+	|Jarrod| -> nil
+	--------
+	
+	--------------------------
+	push	Marcel
+	--------------------------
+	
+	--------		--------
+	|Marcel| -> |Jarrod| -> nil
+	--------		--------
+	
+	--------------------------
+	push 	Jones
+	--------------------------
+	
+  -------    --------		--------
+	|Jones| -> |Marcel| -> |Jarrod| -> nil
+	------- 		--------		--------
+	

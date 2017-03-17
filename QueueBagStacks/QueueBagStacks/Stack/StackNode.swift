@@ -16,7 +16,7 @@ class StackNode {
   ///  linked list.
   typealias NextNode = () -> StackNode
 
-  private let _next: NextNode?
+  internal let _next: NextNode?
   var next: StackNode? {
     get {
       guard let f = _next else { return nil }
