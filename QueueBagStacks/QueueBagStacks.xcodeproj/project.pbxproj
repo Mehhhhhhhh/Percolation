@@ -48,6 +48,7 @@
 		90BE6E461E68081C00B08D28 /* QueueBagStacks */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = QueueBagStacks; sourceTree = BUILT_PRODUCTS_DIR; };
 		90BE6E491E68081C00B08D28 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		90BE6E511E69050D00B08D28 /* StackAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StackAPI.swift; path = Stack/StackAPI.swift; sourceTree = "<group>"; };
+		90EF8AED1E7BF83A00570DA9 /* Queue.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Queue.txt; path = Queue/Queue.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +65,7 @@
 		37C6080B1E78D9450036A57A /* Queue */ = {
 			isa = PBXGroup;
 			children = (
+				90EF8AED1E7BF83A00570DA9 /* Queue.txt */,
 				37C6080C1E78D9950036A57A /* aQueueAPI.swift */,
 				37C608091E78D93C0036A57A /* aLinkedListQueue.swift */,
 				37C6080E1E78DA640036A57A /* aArrayQueue.swift */,
