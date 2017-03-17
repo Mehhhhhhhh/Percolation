@@ -24,10 +24,9 @@ print("-------------\n---Divider---\n-------------")
 
 
 var queue = LinkedListQueue()
-queue.push(item: "first")
-queue.push(item:  "second")
-queue.push(item: "third")
-queue.push(item: "fourth")
+queue.push(item: "Jarrod")
+queue.push(item:  "Marcel")
+queue.push(item: "Jones")
 
 print(String(reflecting: queue))
 //print(queue.debugDescription)

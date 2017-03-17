@@ -56,6 +56,6 @@ extension LinkedListQueue: CustomDebugStringConvertible {
       msg += "|\(tail.item)| -> "
       tail = tail.parent!
     }
-    return "\(msg) |\(tail.item)| -> \(tail.parent)\n"
+    return "\n\(msg)|\(tail.item)| -> \(tail.parent)\n"
   }
 }
