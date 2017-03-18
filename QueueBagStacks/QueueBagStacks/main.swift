@@ -29,4 +29,8 @@ queue.push(item:  "Marcel")
 queue.push(item: "Jones")
 
 print(String(reflecting: queue))
+
+print("Pop result: \(queue.pop())\n")
+print("New Head: \(queue.peek())\n")
+
 //print(queue.debugDescription)

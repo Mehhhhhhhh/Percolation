@@ -20,6 +20,11 @@ struct LinkedListQueue {
     // @new     create new QueueStackNode
     let new = QueueStackNode(item, parent: _tail, next: nil)
     
+    // @set     @head = new
+    if self.isEmpty() {
+      _head = new
+    }
+    
     // @set     @tail.next = @new
     _tail?.next = new
     
@@ -34,6 +39,11 @@ struct LinkedListQueue {
     // @set     @_head = @head_.next
     _head       = _head?.next
     // @return  @head_
+    return head_.item
+  }
+  
+  func peek() -> String {
+    guard let head_ = _head else { return "Aint shit here yo" }
     return head_.item
   }
 
