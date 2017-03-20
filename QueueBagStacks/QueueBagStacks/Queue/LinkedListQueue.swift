@@ -12,20 +12,26 @@ import Foundation
 /// Complexity
 struct LinkedListQueue {
 
-  private var _head: QueueStackNode?
+  internal var _head: QueueStackNode?
   private var _tail: QueueStackNode?
 
-  mutating func push(item: String) {
+  mutating func queue(item: String) {
     // @new     create new QueueStackNode
     let new = QueueStackNode(item, parent: _tail, next: nil)
-    // @set     @tail.next = @new
-    _tail!.next = new
+    // @init    head & tail if empty
+    if isEmpty() {
+      _head = new
+      _tail = new
+    } else {
+      // @set     @tail.next = @new
+      _tail!.next = new
+    }
     // @append  to the end of the linked list
     _tail = new
   }
 
   /// Pops the item off the back of the queue.
-  mutating func pop() -> String {
+  mutating func dequeue() -> String {
     // @head_   the current head
     guard let head_ = _head else { return "" }
     // @set     @_head = @head_.next
@@ -41,5 +47,13 @@ struct LinkedListQueue {
   func size() -> Int {
     guard let head_ = _head else { return 0 }
     return head_.size()
+  }
+}
+
+/// CustomDebugStringConvertible
+extension LinkedListQueue: CustomDebugStringConvertible {
+
+  public var debugDescription: String {
+    return (_head?.debugDescription)!
   }
 }

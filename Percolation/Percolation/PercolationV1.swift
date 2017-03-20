@@ -259,29 +259,7 @@ extension Percolation {
   }
 }
 
-extension Percolation: CustomDebugStringConvertible {
-
-  var debugDescription: String {
-    return "\(gridDescription)\n\(info)"
-  }
-
-  var gridDescription: String {
-    var description: String = "Percolation::"
-    for (index, value) in _sites.enumerated() {
-      // new line begins on the nth = k * n character, where k==>1, 2, 3...
-      if index % _N == 0 {
-        description = "\(description)\n\(value)" } else {
-        description = "\(description)\t\(value)" }
-    }
-    return description
-  }
-
-  var info: String {
-    return
-      "Percolates?\t\(percolates())\n" +
-      "Open Sites:\t\(numberOfOpenSites())\n"
-  }
-}
+ 
 
 extension Percolation {
 

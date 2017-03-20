@@ -10,6 +10,7 @@
 		37C6080A1E78D93C0036A57A /* aLinkedListQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C608091E78D93C0036A57A /* aLinkedListQueue.swift */; };
 		37C6080D1E78D9950036A57A /* aQueueAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C6080C1E78D9950036A57A /* aQueueAPI.swift */; };
 		37C6080F1E78DA640036A57A /* aArrayQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C6080E1E78DA640036A57A /* aArrayQueue.swift */; };
+		901354641E7CBB050085520E /* QueueOfStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901354631E7CBB050085520E /* QueueOfStrings.swift */; };
 		9032990E1E727E52000F5744 /* StackNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9032990D1E727E52000F5744 /* StackNode.swift */; };
 		903299101E72806C000F5744 /* LinkedListStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9032990F1E72806C000F5744 /* LinkedListStack.swift */; };
 		903299131E73758E000F5744 /* StackOfString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903299121E73758E000F5744 /* StackOfString.swift */; };
@@ -37,6 +38,7 @@
 		37C608091E78D93C0036A57A /* aLinkedListQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aLinkedListQueue.swift; sourceTree = "<group>"; };
 		37C6080C1E78D9950036A57A /* aQueueAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aQueueAPI.swift; sourceTree = "<group>"; };
 		37C6080E1E78DA640036A57A /* aArrayQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aArrayQueue.swift; sourceTree = "<group>"; };
+		901354631E7CBB050085520E /* QueueOfStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueueOfStrings.swift; path = Queue/QueueOfStrings.swift; sourceTree = "<group>"; };
 		9032990D1E727E52000F5744 /* StackNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StackNode.swift; path = Stack/StackNode.swift; sourceTree = "<group>"; };
 		9032990F1E72806C000F5744 /* LinkedListStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinkedListStack.swift; path = Stack/LinkedListStack.swift; sourceTree = "<group>"; };
 		903299111E72A722000F5744 /* Notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notes.txt; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				37C6080E1E78DA640036A57A /* aArrayQueue.swift */,
 				904085111E79C284003C1AF8 /* LinkedListQueue.swift */,
 				904085131E7B05B7003C1AF8 /* QueueStackNode.swift */,
+				901354631E7CBB050085520E /* QueueOfStrings.swift */,
 			);
 			name = Queue;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				903299151E770F2B000F5744 /* ArrayStack.swift in Sources */,
 				903299131E73758E000F5744 /* StackOfString.swift in Sources */,
 				90BE6E4A1E68081C00B08D28 /* main.swift in Sources */,
+				901354641E7CBB050085520E /* QueueOfStrings.swift in Sources */,
 				37C6080F1E78DA640036A57A /* aArrayQueue.swift in Sources */,
 				904085141E7B05B7003C1AF8 /* QueueStackNode.swift in Sources */,
 				90BE6E521E69050D00B08D28 /* StackAPI.swift in Sources */,

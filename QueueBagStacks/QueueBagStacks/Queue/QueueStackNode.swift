@@ -8,8 +8,6 @@
 
 import Foundation
 
-
-
 /// Exposes
 class QueueStackNode {
 
@@ -17,7 +15,9 @@ class QueueStackNode {
   var next:   QueueStackNode?
   let item:   String
 
-  init(_ item_: String, parent parent_: QueueStackNode?, next next_: QueueStackNode?) {
+  init(_ item_: String
+    , parent parent_: QueueStackNode?
+    , next next_: QueueStackNode?) {
     item    = item_
     parent  = parent_
     next    = next_
@@ -34,5 +34,17 @@ extension QueueStackNode {
     guard let node_ = node else { return 0 }
     if let next_ = node_.next { return 1 + size(node: next_) }
     return 1
+  }
+}
+
+extension QueueStackNode: CustomDebugStringConvertible {
+
+  public var debugDescription: String {
+    return _next_trace(node: self)
+  }
+
+  private func _next_trace(node: QueueStackNode?) -> String {
+    guard let next_ = node?.next else { return item }
+    return "\(item) -> \(next_)"
   }
 }
