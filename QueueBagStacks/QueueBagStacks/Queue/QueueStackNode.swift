@@ -37,9 +37,11 @@ extension QueueStackNode {
   }
 }
 
+///!!!TODO: use Alex's while loop to implement _next_trace - saves lines
 extension QueueStackNode: CustomDebugStringConvertible {
 
   public var debugDescription: String {
+    let trace = _next_trace(node: self)
     return _next_trace(node: self)
   }
 

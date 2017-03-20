@@ -15,7 +15,6 @@ struct Deque<T>{
   
   init(item: T, followedBy: () -> T) {
     _item = item
-    
   }
   
   func addFirst() {

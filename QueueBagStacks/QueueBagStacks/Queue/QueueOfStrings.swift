@@ -13,7 +13,7 @@ func testQueueOfStrings(_ string: String) -> LinkedListQueue {
   string.components(separatedBy: " ").forEach {
     component in
     if component.compare("-") == .orderedSame {
-      print("QUEUE\n\(queue)\n)")
+      print("QUEUE\n\(queue)\n")
       queue.dequeue()
       print("DEQUEUE\n\(queue)")
 

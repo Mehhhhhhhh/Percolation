@@ -11,7 +11,7 @@ import Foundation
 /// Queue structure, Last In, First Out
 /// Complexity
 struct LinkedListQueue {
-
+  
   internal var _head: QueueStackNode?
   private var _tail: QueueStackNode?
 
@@ -19,6 +19,7 @@ struct LinkedListQueue {
     // @new     create new QueueStackNode
     let new = QueueStackNode(item, parent: _tail, next: nil)
     // @init    head & tail if empty
+
     if isEmpty() {
       _head = new
       _tail = new
@@ -39,6 +40,11 @@ struct LinkedListQueue {
     // @return  @head_
     return head_.item
   }
+  
+  func peek() -> String {
+    guard let head_ = _head else { return "Aint shit here yo" }
+    return head_.item
+  }
 
   func isEmpty() -> Bool {
     return size() == 0
@@ -50,10 +56,25 @@ struct LinkedListQueue {
   }
 }
 
+///!!!TODO: check out Alex's debugDescription method
+
 /// CustomDebugStringConvertible
 extension LinkedListQueue: CustomDebugStringConvertible {
 
   public var debugDescription: String {
-    return (_head?.debugDescription)!
+    guard let head_ = _head else { return "...empty..." }
+    return head_.debugDescription
+/*=======
+extension LinkedListQueue: CustomDebugStringConvertible {
+  var debugDescription: String {
+    guard var tail = _tail  else { return "Like the trap"}
+    
+    var msg: String = ""
+    while tail.parent != nil {
+      msg += "|\(tail.item)| -> "
+      tail = tail.parent!
+    }
+    return "\n\(msg)|\(tail.item)| -> \(tail.parent)\n"
+>>>>>>> 5b21b57cc460b3bac9d20522577e683c8b3e97b1*/
   }
 }
